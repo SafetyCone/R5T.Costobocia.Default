@@ -8,17 +8,30 @@ namespace R5T.Costobocia.Default
 {
     public class DefaultOrganizationStringlyTypedPathOperator : IOrganizationStringlyTypedPathOperator
     {
+        public IOrganizationsStringlyTypedPathOperator OrganizationsStringlyTypedPathOperator { get; }
         public IOrganizationDirectoryNameProvider OrganizationDirectoryNameProvider { get; }
         public IStringlyTypedPathOperator StringlyTypedPathOperator { get; }
 
 
-        public DefaultOrganizationStringlyTypedPathOperator(IOrganizationDirectoryNameProvider organizationDirectoryNameProvider, IStringlyTypedPathOperator stringlyTypedPathOperator)
+        public DefaultOrganizationStringlyTypedPathOperator(
+            IOrganizationsStringlyTypedPathOperator organizationsStringlyTypedPathOperator,
+            IOrganizationDirectoryNameProvider organizationDirectoryNameProvider,
+            IStringlyTypedPathOperator stringlyTypedPathOperator)
         {
+            this.OrganizationsStringlyTypedPathOperator = organizationsStringlyTypedPathOperator;
             this.OrganizationDirectoryNameProvider = organizationDirectoryNameProvider;
             this.StringlyTypedPathOperator = stringlyTypedPathOperator;
         }
 
-        public string GetOrganizationDirectoryPath(string organizationsDirectoryPath, IOrganization organization)
+        public string GetOrganizationDirectoryPathFromBaseDirectoryPath(string baseDirectoryPath, IOrganization organization)
+        {
+            var organizationsDirectoryPath = this.OrganizationsStringlyTypedPathOperator.GetOrganizationsDirectoryPath(baseDirectoryPath);
+
+            var output = this.GetOrganizationDirectoryPathFromOrganizationsDirectoryPath(organizationsDirectoryPath, organization);
+            return output;
+        }
+
+        public string GetOrganizationDirectoryPathFromOrganizationsDirectoryPath(string organizationsDirectoryPath, IOrganization organization)
         {
             var organizationDirectoryName = this.OrganizationDirectoryNameProvider.GetOrganizationDirectoryName(organization);
 
