@@ -36,7 +36,7 @@ namespace R5T.Costobocia.Default
             var organizationDirectoryName = this.OrganizationDirectoryNameProvider.GetOrganizationDirectoryName(organization);
 
             var organizationDirectoryPath = this.StringlyTypedPathOperator.GetDirectoryPath(organizationsDirectoryPath, organizationDirectoryName);
-            return organizationDirectoryName;
+            return organizationDirectoryPath;
         }
     }
 }
