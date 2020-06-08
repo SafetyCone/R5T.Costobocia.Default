@@ -5,12 +5,12 @@ using R5T.Lombardy;
 
 namespace R5T.Costobocia.Default
 {
-    public class DefaultOrganizationsStringlyTypedPathOperator : IOrganizationsStringlyTypedPathOperator
+    public class OrganizationsStringlyTypedPathOperator : IOrganizationsStringlyTypedPathOperator
     {
         public IStringlyTypedPathOperator StringlyTypedPathOperator { get; }
 
 
-        public DefaultOrganizationsStringlyTypedPathOperator(IStringlyTypedPathOperator stringlyTypedPathOperator)
+        public OrganizationsStringlyTypedPathOperator(IStringlyTypedPathOperator stringlyTypedPathOperator)
         {
             this.StringlyTypedPathOperator = stringlyTypedPathOperator;
         }

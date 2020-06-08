@@ -6,14 +6,14 @@ using R5T.Ostrogothia;
 
 namespace R5T.Costobocia.Default
 {
-    public class DefaultOrganizationStringlyTypedPathOperator : IOrganizationStringlyTypedPathOperator
+    public class OrganizationStringlyTypedPathOperator : IOrganizationStringlyTypedPathOperator
     {
         public IOrganizationsStringlyTypedPathOperator OrganizationsStringlyTypedPathOperator { get; }
         public IOrganizationDirectoryNameProvider OrganizationDirectoryNameProvider { get; }
         public IStringlyTypedPathOperator StringlyTypedPathOperator { get; }
 
 
-        public DefaultOrganizationStringlyTypedPathOperator(
+        public OrganizationStringlyTypedPathOperator(
             IOrganizationsStringlyTypedPathOperator organizationsStringlyTypedPathOperator,
             IOrganizationDirectoryNameProvider organizationDirectoryNameProvider,
             IStringlyTypedPathOperator stringlyTypedPathOperator)

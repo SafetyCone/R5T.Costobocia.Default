@@ -8,7 +8,7 @@ namespace R5T.Costobocia.Default
     /// <summary>
     /// Provides the name of the organization as the organzation's directory name.
     /// </summary>
-    public class DefaultOrganizationDirectoryNameProvider : IOrganizationDirectoryNameProvider
+    public class OrganizationDirectoryNameProvider : IOrganizationDirectoryNameProvider
     {
         public string GetOrganizationDirectoryName(IOrganization organization)
         {

@@ -11,17 +11,17 @@ namespace R5T.Costobocia.Default
     public static class IServiceCollectionExtensions
     {
         /// <summary>
-        /// Adds the <see cref="DefaultOrganizationDirectoryNameProvider"/> implementation of <see cref="IOrganizationDirectoryNameProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="OrganizationDirectoryNameProvider"/> implementation of <see cref="IOrganizationDirectoryNameProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
         /// </summary>
         public static IServiceCollection AddDefaultOrganizationDirectoryNameProvider(this IServiceCollection services)
         {
-            services.AddSingleton<IOrganizationDirectoryNameProvider, DefaultOrganizationDirectoryNameProvider>();
+            services.AddSingleton<IOrganizationDirectoryNameProvider, OrganizationDirectoryNameProvider>();
 
             return services;
         }
 
         /// <summary>
-        /// Adds the <see cref="DefaultOrganizationDirectoryNameProvider"/> implementation of <see cref="IOrganizationDirectoryNameProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="OrganizationDirectoryNameProvider"/> implementation of <see cref="IOrganizationDirectoryNameProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
         /// </summary>
         public static ServiceAction<IOrganizationDirectoryNameProvider> AddDefaultOrganizationDirectoryNameProviderAction(this IServiceCollection services)
         {
@@ -30,13 +30,13 @@ namespace R5T.Costobocia.Default
         }
 
         /// <summary>
-        /// Adds the <see cref="DefaultOrganizationsStringlyTypedPathOperator"/> implementation of <see cref="IOrganizationsStringlyTypedPathOperator"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="OrganizationsStringlyTypedPathOperator"/> implementation of <see cref="IOrganizationsStringlyTypedPathOperator"/> as a <see cref="ServiceLifetime.Singleton"/>.
         /// </summary>
         public static IServiceCollection AddDefaultOrganizationsStringlyTypedPathOperator(this IServiceCollection services,
             ServiceAction<IStringlyTypedPathOperator> addStringlyTypedPathOperator)
         {
             services
-                .AddSingleton<IOrganizationsStringlyTypedPathOperator, DefaultOrganizationsStringlyTypedPathOperator>()
+                .AddSingleton<IOrganizationsStringlyTypedPathOperator, OrganizationsStringlyTypedPathOperator>()
                 .RunServiceAction(addStringlyTypedPathOperator)
                 ;
 
@@ -44,7 +44,7 @@ namespace R5T.Costobocia.Default
         }
 
         /// <summary>
-        /// Adds the <see cref="DefaultOrganizationsStringlyTypedPathOperator"/> implementation of <see cref="IOrganizationsStringlyTypedPathOperator"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="OrganizationsStringlyTypedPathOperator"/> implementation of <see cref="IOrganizationsStringlyTypedPathOperator"/> as a <see cref="ServiceLifetime.Singleton"/>.
         /// </summary>
         public static ServiceAction<IOrganizationsStringlyTypedPathOperator> AddDefaultOrganizationsStringlyTypedPathOperatorAction(this IServiceCollection services,
             ServiceAction<IStringlyTypedPathOperator> addStringlyTypedPathOperator)
@@ -55,7 +55,7 @@ namespace R5T.Costobocia.Default
         }
 
         /// <summary>
-        /// Adds the <see cref="DefaultOrganizationStringlyTypedPathOperator"/> implementation of <see cref="IOrganizationStringlyTypedPathOperator"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="OrganizationStringlyTypedPathOperator"/> implementation of <see cref="IOrganizationStringlyTypedPathOperator"/> as a <see cref="ServiceLifetime.Singleton"/>.
         /// </summary>
         public static IServiceCollection AddDefaultOrganizationStringlyTypedPathOperator(this IServiceCollection services,
             ServiceAction<IOrganizationsStringlyTypedPathOperator> addOrganizationsStringlyTypedPathOperator,
@@ -63,7 +63,7 @@ namespace R5T.Costobocia.Default
             ServiceAction<IStringlyTypedPathOperator> addStringlyTypedPathOperator)
         {
             services
-                .AddSingleton<IOrganizationStringlyTypedPathOperator, DefaultOrganizationStringlyTypedPathOperator>()
+                .AddSingleton<IOrganizationStringlyTypedPathOperator, OrganizationStringlyTypedPathOperator>()
                 .RunServiceAction(addOrganizationsStringlyTypedPathOperator)
                 .RunServiceAction(addOrganizationDirectoryNameProvider)
                 .RunServiceAction(addStringlyTypedPathOperator)
@@ -73,7 +73,7 @@ namespace R5T.Costobocia.Default
         }
 
         /// <summary>
-        /// Adds the <see cref="DefaultOrganizationStringlyTypedPathOperator"/> implementation of <see cref="IOrganizationStringlyTypedPathOperator"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="OrganizationStringlyTypedPathOperator"/> implementation of <see cref="IOrganizationStringlyTypedPathOperator"/> as a <see cref="ServiceLifetime.Singleton"/>.
         /// </summary>
         public static ServiceAction<IOrganizationStringlyTypedPathOperator> AddDefaultOrganizationStringlyTypedPathOperatorAction(this IServiceCollection services,
             ServiceAction<IOrganizationsStringlyTypedPathOperator> addOrganizationsStringlyTypedPathOperator,
