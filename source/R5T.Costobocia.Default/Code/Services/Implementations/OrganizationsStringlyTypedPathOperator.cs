@@ -2,10 +2,13 @@
 
 using R5T.Lombardy;
 
+using R5T.T0064;
+
 
 namespace R5T.Costobocia.Default
 {
-    public class OrganizationsStringlyTypedPathOperator : IOrganizationsStringlyTypedPathOperator
+    [ServiceImplementationMarker]
+    public class OrganizationsStringlyTypedPathOperator : IOrganizationsStringlyTypedPathOperator, IServiceImplementation
     {
         public IStringlyTypedPathOperator StringlyTypedPathOperator { get; }
 

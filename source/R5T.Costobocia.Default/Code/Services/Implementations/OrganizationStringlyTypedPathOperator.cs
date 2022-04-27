@@ -3,10 +3,13 @@
 using R5T.Lombardy;
 using R5T.Ostrogothia;
 
+using R5T.T0064;
+
 
 namespace R5T.Costobocia.Default
 {
-    public class OrganizationStringlyTypedPathOperator : IOrganizationStringlyTypedPathOperator
+    [ServiceImplementationMarker]
+    public class OrganizationStringlyTypedPathOperator : IOrganizationStringlyTypedPathOperator, IServiceImplementation
     {
         public IOrganizationsStringlyTypedPathOperator OrganizationsStringlyTypedPathOperator { get; }
         public IOrganizationDirectoryNameProvider OrganizationDirectoryNameProvider { get; }
